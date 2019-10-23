@@ -5,20 +5,21 @@ require 'directors_database'
 #
 # { directorOne => allTheMoneyTheyMade, ... }
 
-
 def directors_totals(nds)
-  results = {}
-  director_num = 0
-  while director_num < nds.length do
-    movies_num = 0
-    director = nds[director][:name]
-    results[director] = 0
-    while movies_num < nds[director_num][:movies].length do
-      results[director] += nds[director_num][:movies][movies_num][:worldwide_gross]
+  result = {
+  }
+  director_count = 0
+  while director_count < nds.length do
+    director = nds[director_count][:name]
+    result[director] = 0
+    movie_count = 0
+    while movie_count < nds[director_count][:movies].length do
+        result[director] += nds[director_count][:movies][movie_count][:worldwide_gross]
+      movie_count += 1
     end
+    director_count += 1
   end
-
-  results
+  result
 end
 
 # Find a way to accumulate the :worldwide_grosses and return that Integer
