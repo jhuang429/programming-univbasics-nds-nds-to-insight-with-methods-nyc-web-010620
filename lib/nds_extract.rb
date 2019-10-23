@@ -32,4 +32,5 @@ def gross_for_director(director_data)
     num_movie += 1
   end
    total
+   puts director_data[0]
 end
