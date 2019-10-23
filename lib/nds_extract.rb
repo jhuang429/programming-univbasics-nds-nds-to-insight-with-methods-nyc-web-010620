@@ -29,5 +29,3 @@ end
 def gross_for_director(director_data)
   puts director_data[:movies]
 end
-
-
